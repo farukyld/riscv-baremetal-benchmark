@@ -1,6 +1,3 @@
-[submodule "Heap-Manager"]
-	path = Heap-Manager
-	url = https://github.com/farukyld/Heap-Manager
 [submodule "bringup-bench"]
 	path = bringup-bench
 	url = https://github.com/farukyld/bringup-bench
