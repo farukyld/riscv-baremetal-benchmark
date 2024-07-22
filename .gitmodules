@@ -1,3 +1,7 @@
 [submodule "bringup-bench"]
 	path = bringup-bench
 	url = https://github.com/farukyld/bringup-bench
+
+[submodule "spike_toddmaustin"]
+	path = spike_toddmaustin
+	url = https://github.com/toddmaustin/riscv-isa-sim.git

@@ -1,8 +1,7 @@
 # once toddmaustin'in forkladigi spike repo'sunu indirip kuruyoruz.
-
-git clone https://github.com/toddmaustin/riscv-isa-sim.git spike_toddmaustin
+git submodule update --init --recursive
 cd spike_toddmaustin
-mkdir build
+mkdir -p build
 cd build
 ../configure --prefix=$RISCV
 make -j12
@@ -12,11 +11,9 @@ cd .. # build dizininden cikarak spike_toddmaustin dizinine gidiyoruz.
 echo "export SPIKE_TODDMAUSTIN=$(pwd)" >> ~/.bashrc
 source ~/.bashrc
 
-# bringup-bench reposunu indiriyoruz.
-cd ..
-git submodule update --init --recursive
+
 # testleri calistirmadan once mmio_plugin.so'yu derliyoruz.
-cd bringup-bench
+cd ../bringup-bench
 make spike-build # bringup-bench/target dizini altinda mmio_plugin.so 
 #                  dosyasi olusacak.
 # testleri calistiriyoruz.
