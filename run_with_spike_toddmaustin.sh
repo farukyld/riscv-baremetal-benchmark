@@ -1,26 +1,35 @@
 # once toddmaustin'in forkladigi spike repo'sunu indirip kuruyoruz.
-git submodule update --init --recursive
-cd spike_toddmaustin
-mkdir -p build
-cd build
-../configure --prefix=$RISCV
-make -j12
+git submodule update --init --recursive;
+cd spike_toddmaustin;
+mkdir -p build;
+cd build;
+../configure --prefix=$RISCV;
+make -j12;
 
 # SPIKE_TODDMAUSTIN degiskenini bashrc scriptine ekliyoruz.
-cd .. # build dizininden cikarak spike_toddmaustin dizinine gidiyoruz.
-echo "export SPIKE_TODDMAUSTIN=$(pwd)" >> ~/.bashrc
-source ~/.bashrc
+cd ..; # build dizininden cikarak spike_toddmaustin dizinine gidiyoruz.
+echo "export SPIKE_TODDMAUSTIN=$(pwd)" >> ~/.bashrc;
+
+# source ~/.bashrc # bu scrip'te degiskenni tanimlanmasini saglamiyordu.
+export SPIKE_TODDMAUSTIN=$(pwd)
+
+# NOT: script'i ./run_with_spike_toddmaustin.sh olarak calistirirsak
+# degisken tanimlama cagiran shell'i etkilemiyor. 
+# source run_with_spike_toddmaustin.sh
+# komutu ile calistirinca degisken, cagiran shell'e tanimlaniyor.
 
 
 # testleri calistirmadan once mmio_plugin.so'yu derliyoruz.
-cd ../bringup-bench
-make spike-build # bringup-bench/target dizini altinda mmio_plugin.so 
+cd ../bringup-bench;
+make spike-build; # bringup-bench/target dizini altinda mmio_plugin.so 
 #                  dosyasi olusacak.
 # testleri calistiriyoruz.
-make TARGET=spike run-tests
+make TARGET=spike run-tests;
+
+
 # NOT: 
 # bende riscv derleyicisinin multi-lib konfigurasyonu:
-riscv64-unknown-elf-gcc --print-multi-lib
+riscv64-unknown-elf-gcc --print-multi-lib;
 # bu asagidaki gibi.
 # .;
 # rv32e/ilp32e;@march=rv32e@mabi=ilp32e
