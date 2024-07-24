@@ -1,7 +1,16 @@
 # riscv-baremetal-benchmark
 
+
 ```shell
 source run_with_spike_toddmaustin.sh
+```
+
+güncel spike ile çalıştırmak için (to run with up-to-date spike)
+
+```shell
+export SPIKE_ORIG= # original built version of the spike
+cd bringup-bench
+make TARGET=spike run-tests
 ```
 
 sayaç tabanlı performans ölçümleri yapmak için uygun bir yer:
