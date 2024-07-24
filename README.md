@@ -8,7 +8,7 @@ source run_with_spike_toddmaustin.sh
 güncel spike ile çalıştırmak için (to run with up-to-date spike)
 
 ```shell
-# change this to where you have the built /riscv-isa-sim directory
+# change this to where you have the /riscv-isa-sim directory (it have to be built)
 export SPIKE_ORIG=$SPIKE_ORIG 
 git submodule update --init --recursive
 cd bringup-bench
