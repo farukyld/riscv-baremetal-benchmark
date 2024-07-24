@@ -24,7 +24,7 @@ cd ../bringup-bench;
 make spike-build; # bringup-bench/target dizini altinda mmio_plugin.so 
 #                  dosyasi olusacak.
 # testleri calistiriyoruz.
-make TARGET=spike run-tests;
+make TARGET=spike_toddmaustin run-tests;
 
 
 # NOT: 
