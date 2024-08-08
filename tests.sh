@@ -1,5 +1,5 @@
 current_dir=${PWD##*/}
-before_dir=$PWD
+prev_dir=$PWD
 
 if [ "$current_dir" != "bringup-bench" ]; then
   if [ -d "bringup-bench" ]; then
@@ -59,4 +59,4 @@ echo -e  "\033[32m completed test with: hard float is used, aliasing is disabled
 
 # echo -e  "\033[33m running test for spike_toddmaustin \033[0m"
 
-cd $before_dir
+cd $prev_dir
